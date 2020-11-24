@@ -1,12 +1,12 @@
 var connect = require('connect')
 var http = require('http')
 var fs = require('fs')
-var app = connect()
+var express = require('express');
+var app = express()
 
-function index(request, response) {
-    fs.createReadStream('./views/index.ejs').pipe(response)
-}
+var indexRouter = require('./routes/index')
+
+app.use('/', indexRouter)
 
 
-app.use('/', index);
 http.createServer(app).listen(8000);
