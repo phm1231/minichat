@@ -7,5 +7,6 @@ function index(request, response) {
     fs.createReadStream('./views/index.ejs').pipe(response)
 }
 
+
 app.use('/', index);
 http.createServer(app).listen(8000);
