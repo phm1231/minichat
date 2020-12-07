@@ -1,0 +1,5 @@
+express
+mysql
+socket.io
+connect
+ejs
