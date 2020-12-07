@@ -15,7 +15,21 @@ app.set("view engine", "ejs");
 app.use("/", indexRouter)
 
 
-http.createServer(app).listen(8000);
+const server = http.createServer(app);
+const io = require('socket.io')(server);
+var port = 8000;
 
+server.listen(port, ()=>{
+		console.log('listening on port : %d', port);
+		});
 
+io.on('connection', (socket)=>{
+		console.log('user_connected');
+		socket.on('disconnect', ()=>{
+				console.log('user_disconnected');
+				});
+		socket.on('chat-msg', (msg)=>{
+				io.emit('chat-msg', msg);
+				});
+});
 
