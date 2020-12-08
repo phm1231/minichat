@@ -8,6 +8,7 @@ var path = require('path');
 var routes = require('./routes');
 var bodyParser = require("body-parser");
 var session = require('express-session');
+const socket = require('socket.io');
 
 // 라우팅 모듈
 var indexRouter = require('./routes/index')
@@ -18,10 +19,6 @@ var logoutRouter = require('./routes/logout');
 // express 기본 설정
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine", "ejs");
-/*
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json());
-*/
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(session({
@@ -37,16 +34,15 @@ app.use('/login/', loginRouter);
 app.use('/logout/', logoutRouter);
 
 
-
-
 const server = http.createServer(app);
-const io = require('socket.io')(server);
+
 var port = 8000;
 
 server.listen(port, ()=>{
 		console.log('listening on port : %d', port);
-		});
+});
 
+var io = socket(server);
 io.on('connection', (socket)=>{
 		console.log('user_connected');
 		socket.on('disconnect', ()=>{

@@ -3,5 +3,4 @@ mysql
 socket.io
 connect
 ejs
-body-parser
 express-session
