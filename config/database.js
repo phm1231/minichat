@@ -10,5 +10,15 @@ let connection = mysql.createConnection({
     database: "minichat"
 });
 connection.connect();
-
+/*
+var pool = mysql.createPool({
+    connectionLimit: 10,
+    host,
+    port: 3305,
+    user: 'chatadmin',
+    password,
+    database: 'minichat'
+})
+module.exports.pool = pool;
+*/
 module.exports = connection;
