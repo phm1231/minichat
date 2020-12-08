@@ -9,11 +9,14 @@ var bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index')
 var signupRouter = require('./routes/signup');
+var loginRouter = require('./routes/login');
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false}));
 
 app.use("/", indexRouter)
 app.use('/signup/', signupRouter);
+app.use('/login/', loginRouter);
 
 
 http.createServer(app).listen(8000);

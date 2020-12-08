@@ -3,3 +3,4 @@ mysql
 socket.io
 connect
 ejs
+body-parser
