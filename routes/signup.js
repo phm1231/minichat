@@ -12,10 +12,10 @@ router.post('/', function(req, res) {
     var password = body.password;
     var password_re = body.password_re;
 
-    var query = connection.query('INSERT INTO user (user_password, user_login_id) values ("' + password + '", "' + login_id + '")', function(err, rows) {
+    connection.query('INSERT INTO user (user_password, user_login_id) values ("' + password + '", "' + login_id + '")', function(err, rows) {
         if(err) throw err;
-        console.log('Data inserted');
     })
+    res.redirect('/login');
 })
 
 module.exports = router;
