@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
     }
     else {
         connection.query('SELECT * FROM user WHERE user_login_id=?', [login_id], function(err, results, fields) {
-			console.log("login results : " + results[0].user_password);
+			console.log("login results : " + results);
             if(err) throw err;
             if(results.length > 0) {
                 if(results[0].user_password == password) {
