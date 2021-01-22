@@ -55,12 +55,11 @@
   $(() => {
     const name = "<%=name%>";
 	const rid = "<%=rid%>";
-	const uid = "<%=uid%>";
 	const des = "<%-des%>";
     const socket = io();
 
     $('form').submit(()=>{
-		var msg = {name: name, message: $('#m').val(), uid: uid, rid: rid};
+		var msg = {name: name, message: $('#m').val(), rid: rid};
       	socket.emit('chat-msg', msg);
       	$('#m').val('');
       	return false;

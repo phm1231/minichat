@@ -4,8 +4,7 @@
 
 <head>
 
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"> -->
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Room List</title>
 
 </head>
@@ -22,15 +21,11 @@
 			<%-lists%>
 		</ul>
    </div>
+   <div>
+		<button><a href="make_room">new room</a></button>
+   </div>
  </center>
  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
- <script>
- /*
-	$(()=>{
-			$('#room_list').append(<%-lists%>);
-			});
-			*/
- </script>
 
 </body>
 

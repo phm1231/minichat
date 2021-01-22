@@ -6,7 +6,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
-<title>로그인</title>
+<title>make room</title>
 
 </head>
 
@@ -16,24 +16,33 @@
 
  <center>
 
-   <h3>로그인</h3>
+   <h3>make room</h3>
     <form method="POST" action="">
       <table cellpadding="5" cellspacing="0"
             bgcolor="eeeeee">
         <tr>
           <td>ID:</td>
-          <td><input type="text" name="login_id"></td>
+          <td><input type="text" name="login_id">
+              <input type="button" name="duplcate_check" value="중복확인">
+          </td>
         </tr>
         <tr>
           <td>비 번:</td>
           <td><input type="password" name="password"> </td>
         </tr>
+        <tr>
+          <td>비번확인:</td>
+          <td><input type="password" name="password_re"> </td>
+        </tr>
       </table>
-      <input type="submit" value="SIGN IN"/>
+      <input type="submit" value="제출"/>
     </form>
-	<br></br>
-	<button><a href="/signup">SIGN UP</a></button>
+   
+
  </center>
+
+
+
 </body>
 
 </html>
